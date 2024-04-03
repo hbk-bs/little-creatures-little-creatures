@@ -1,63 +1,63 @@
 <!doctype html>
 <html>
-	<head>
-		<title>Real-time Updates</title>
-		<style>
-			body {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				font-family: sans-serif;
-			}
-			body {
-				margin: 0 auto;
-				padding: 0 auto;
-				font-family: sans-serif;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				flex-direction: column;
-				height: 100vh;
-			}
-			#container {
-				width: 50%;
-				height: 100%;
-			}
-			pre {
-				width: 100%;
-				margin: 0 auto;
-				padding: 0 auto;
-				overflow: scroll;
-				background-color: #f5f5f5;
-			}
-		</style>
-	</head>
-	<body>
-		<div id="container">
-			<pre><code id="data"></code></pre>
-		</div>
-		<script>
-			function main() {
-				let serverUrl = "";
-				let scheme = "ws";
-				const { location: loc } = document;
+  <head>
+    <title>Real-time Updates</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: sans-serif;
+      }
+      body {
+        margin: 0 auto;
+        padding: 0 auto;
+        font-family: sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+      }
+      #container {
+        width: 50%;
+        height: 100%;
+      }
+      pre {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 auto;
+        overflow: scroll;
+        background-color: #f5f5f5;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <pre><code id="data"></code></pre>
+    </div>
+    <script>
+      function main() {
+        let serverUrl = "";
+        let scheme = "ws";
+        const { location: loc } = document;
 
-				if (loc.protocol === "https:") {
-					scheme += "s";
-				}
-				serverUrl = `${scheme}://${loc.hostname}:${loc.port}`;
+        if (loc.protocol === "https:") {
+          scheme += "s";
+        }
+        serverUrl = `${scheme}://${loc.hostname}:${loc.port}`;
 
-				const ws = new WebSocket(`${serverUrl}/ws/little-creatures`);
-				ws.onmessage = function (event) {
-					const data = JSON.parse(event.data);
-					document.getElementById("data").innerText = JSON.stringify(
-						data,
-						null,
-						2,
-					);
-				};
-			}
-			main();
-		</script>
-	</body>
+        const ws = new WebSocket(`${serverUrl}/ws/little-creatures`);
+        ws.onmessage = function (event) {
+          const data = JSON.parse(event.data);
+          document.getElementById("data").innerText = JSON.stringify(
+            data,
+            null,
+            2,
+          );
+        };
+      }
+      main();
+    </script>
+  </body>
 </html>

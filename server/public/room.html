@@ -1,33 +1,33 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Room Simulator</title>
-		<style>
-			body {
-				margin: 0;
-				padding: 0;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				flex-direction: row;
-				height: 100vh;
-			}
-			#sketch {
-				display: grid;
-				grid-template-columns: repeat(7, 1fr); /*create 5 equal-width columns*/
-				grid-template-rows: repeat(9, 1fr); /*create 5 equal-height rows*/
-				gap: 3px; /*define the space between buttons*/
-				padding: 4rem;
-			}
-		</style>
-	</head>
-	<!-- <script src="/lib/p5.min.js"></script> -->
-	<!-- <script src="/lib/p5.sound.min.js"></script> -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Room Simulator</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        height: 100vh;
+      }
+      #sketch {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr); /*create 5 equal-width columns*/
+        grid-template-rows: repeat(9, 1fr); /*create 5 equal-height rows*/
+        gap: 3px; /*define the space between buttons*/
+        padding: 4rem;
+      }
+    </style>
+  </head>
+  <!-- <script src="/lib/p5.min.js"></script> -->
+  <!-- <script src="/lib/p5.sound.min.js"></script> -->
 
-	<body>
-		<div id="sketch"></div>
-		<script type="module" src="./util/room.js"></script>
-	</body>
+  <body>
+    <div id="sketch"></div>
+    <script type="module" src="./util/room.js"></script>
+  </body>
 </html>
