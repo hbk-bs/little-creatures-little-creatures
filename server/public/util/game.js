@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   roomButton.addEventListener("click", (e) => {
     let newWindow = window.open(
-      `/util/room.html?channel=${id}`,
+      `/room.html?channel=${id}`,
       "_blank",
       `width=200,height=200,left=${0},top=0`,
     );
